@@ -11,7 +11,7 @@ import socket
 import sys
 
 host = 'localhost' 
-port = 50000 
+port = 50010 
 size = 1024 
 
 nargs = len(sys.argv)

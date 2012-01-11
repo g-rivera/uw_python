@@ -10,7 +10,7 @@ import socket
 import sys
 
 host = '' 
-port = 50000 
+port = 50010 
 
 if len(sys.argv) > 1:
     port = int(sys.argv[1])

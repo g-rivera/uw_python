@@ -28,4 +28,4 @@ while len(prompt) > 0:
     data = s.recv(size)
     s.close()
     print 'from (%s,%s) %s' % (host, port, data)
-    prompt = raw_input('Enter another string: ')
+    prompt = raw_input('Enter a string to echo: ')
