@@ -1,3 +1,7 @@
+# Guillermo Rivera
+# UW Python 200 - Internet Programming in Python
+# thirty_minute_webserver.py
+
 #
 # ws30 -- the thirty minute web server
 # author: Wilhelm Fitzpatrick (rafial@well.com)
