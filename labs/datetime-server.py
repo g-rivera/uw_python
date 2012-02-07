@@ -33,7 +33,7 @@ The current time is: %s
 """
 
 host = '' 
-port = 8081 # different default port than thirty_minute_webserver
+port = 8082 # different default port than thirty_minute_webserver
 
 # optional command line argument: port 
 if len(sys.argv) > 1:
