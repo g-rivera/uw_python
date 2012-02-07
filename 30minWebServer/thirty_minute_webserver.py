@@ -18,7 +18,6 @@
 #
 
 import os, socket, sys
-import subprocess
 from datetime import datetime
 
 defaults = ['', '8080']  # '127.0.0.1' here limits connections to localhost
