@@ -107,15 +107,20 @@ def get_content(uri):
     print 'fetching:', uri
     try:
         path = '.' + uri
-        root, ext = os.path.splitext(path)
-        if root == './date': # date url condition
-            return (200, 'text/html', 'The current time is: %s' % datetime.now()) # displays date
+        
+        # code for assignment - outputs date when url == date.html
+        if uri.endswith('date.html'):
+            return (200, 'text/html', 'The current time is: %s' % datetime.now()) 
+
         if os.path.isfile(path):
-            if ext == '.py': # .py file condition
-                executefile = os.popen('python %s' % path) # pipe .py script
-                output = executefile.read() # read output of pipe
-                return (200, 'text/html', output) # return output
-            else: return (200, get_mime(uri), get_file(path))
+
+            # harder code - executes python script
+            if os.path.endswith('.py'):
+                output = os.popen('python ' + path).read()
+                return (200, 'text/plain', output)
+
+            return (200, get_mime(uri), get_file(path))
+
         if os.path.isdir(path):
             if(uri.endswith('/')):
                 return (200, 'text/html', list_directory(uri))
