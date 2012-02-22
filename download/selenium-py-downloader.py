@@ -1,3 +1,7 @@
+# Guillermo
+# UW Python 200 - Internet Programming in Python
+# donwnload, requires selenium library
+
 import os
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
@@ -13,7 +17,7 @@ fp.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/octet-s
 browser = webdriver.Firefox(firefox_profile=fp) # Get local session of firefox
 browser.get("http://jon-jacky.github.com/uw_python/winter_2012/index.html") # Load page
 assert "Internet Programming in Python" in browser.title
-time.sleep(10.0) # Let the page load, will be added to the API
+time.sleep(3.0) # Let the page load
 py_links = browser.find_elements_by_partial_link_text(".py") # Return list of .py links
 for py in py_links:
     py.click() # Download .py links
