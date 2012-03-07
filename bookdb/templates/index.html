@@ -1,0 +1,19 @@
+<!doctype html>
+<head>
+    <title>Book DB</title>
+    <link href="{{ url_for('static', filename='info.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="main container">
+        <h1>Books</h1>
+        <h2>Titles in database: {{ num_books }}</h2>
+        <p>
+        <ul>
+            {% for book in books %}
+            <li><a href="/info/{{ book.id }}">{{ book.title }}</a></li>
+            {% endfor %}
+        </ul>
+        </p>
+    </div>
+</body>

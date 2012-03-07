@@ -1,0 +1,17 @@
+<!doctype html>
+<head>
+<title>Book DB</title>
+    <link href="{{ url_for('static', filename='info.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="Detail">
+        <h2>{{ book.title }}</h2>
+        <ul>
+            <li><strong>ISBN</strong>: {{ book.isbn }}</li>
+            <li><strong>Publisher</strong>: {{ book.publisher }}</li>
+            <li><strong>Author</strong>: {{ book.author }}</li>
+        </ul>
+        <a href="/">Back</a>
+    </div>
+</body>
