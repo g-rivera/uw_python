@@ -1,0 +1,8 @@
+from books.models import Book
+from django.contrib import admin
+
+class BookAdmin(admin.ModelAdmin):
+    fields = ['title', 'author', 'isbn', 'publisher', 'pub_date']
+    list_display = ('title', 'author', 'pub_date')
+    
+admin.site.register(Book, BookAdmin)
