@@ -1,26 +1,20 @@
 # Create your views here.
 
+from django.shortcuts import render_to_response
+from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from books.models import book
 from bookdb import BookDB
 from django.template import Context,loader
 
 def index(books):
-    t = loader.get_template('index.html')
-    c = Context({
-        'all_books': book.objects.all().order_by("title"),
-    })
-    return HttpResponse(t.render(c))
+    book_list = book.objects.all().orderby('author')
+    return render_to_response('books/index.html', { 'book_list' : book_list }
 
-def detail(request,find_book_id):
-    print find_book_id
-    detail_book=book.objects.get(book_id=find_book_id)
-    print detail_book.title
-    t = loader.get_template('detail.html')
-    c = Context({
-        'book': detail_book,
-    })
-    return HttpResponse(t.render(c))
+def info(request,find_book_id):
+    b = get_object_or_404(Book, pk=id)
+    return render_to_response('books/detail.html', {'book': b})
+
 def my_admin(request):
     book_count=book.objects.all().count()
     t = loader.get_template('my_admin.html')
@@ -37,10 +31,6 @@ def my_admin_purge(request):
         'book_count': book_count,
     })
     return HttpResponse(t.render(c))
-   
-
-
-
 
 def my_admin_load_BooksDB(request):
     my_books=BookDB()
